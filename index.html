@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Feliz 3 Anos ❤️</title>
+
+<style>
+body {
+    margin: 0;
+    padding: 0;
+    background: black;
+    color: white;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    overflow-x: hidden;
+}
+
+/* Título */
+h1 {
+    margin-top: 100px;
+    font-size: 40px;
+}
+
+/* TEXTO GRANDE - ESCREVA AQUI */
+.texto-grande {
+    max-width: 800px;
+    margin: 40px auto;
+    font-size: 20px;
+    line-height: 1.6;
+}
+
+/* Galeria */
+.galeria {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin: 50px 20px;
+}
+
+.galeria img {
+    width: 150px;
+    border-radius: 15px;
+    box-shadow: 0 0 15px red;
+    transition: transform 0.3s;
+}
+
+.galeria img:hover {
+    transform: scale(1.1);
+}
+
+/* Corações */
+.heart {
+    position: fixed;
+    top: -10px;
+    color: red;
+    font-size: 20px;
+    animation: fall linear infinite;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(100vh);
+    }
+}
+
+/* Caixa final */
+.caixa-final {
+    margin: 100px 0;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 18px;
+    margin: 10px;
+    cursor: pointer;
+    border-radius: 10px;
+    border: none;
+}
+
+#sim {
+    background-color: green;
+    color: white;
+}
+
+#nao {
+    background-color: red;
+    color: white;
+    position: absolute;
+}
+
+.mensagem-final {
+    font-size: 24px;
+    margin-top: 20px;
+    display: none;
+}
+
+/* Confete */
+.confete {
+    position: fixed;
+    width: 8px;
+    height: 8px;
+    background: yellow;
+    animation: subir 2s linear forwards;
+}
+
+@keyframes subir {
+    from { transform: translateY(100vh); }
+    to { transform: translateY(-10vh); }
+}
+</style>
+</head>
+
+<body>
+
+<h1>Feliz 3 anos juntos ❤️</h1>
+
+<div class="texto-grande">
+  Parabéns, princesa, parabéns para nós que resistimos à impetuosidade do tempo. Foram 36 meses ao seu lado, mais de 1000 dias com você, quase 26.400 horas pensando em você... e pelos 1.555.200 minutos a desejando... eu, em nenhum dos 94.694.400 segundos deixei de lhe amar. 
+E, ao decorrer desses 3 efêmeros anos, aprendemos várias coisas... Coisas que não podem ser aprendidas sem a intervenção do tão velho, e conhecido, amor. Eu aprendi mais de mim, aprendi muito sobre você e, com um pouco de certeza, creio que a recíproca é verdadeira, não é?  Como dizia o bom Machado: "Cada qual sabe amar a seu modo; o modo, pouco importa; o essencial é que saiba amar." E assim seguiu, à nossa maneira.
+	Amar você não é nenhum tipo de mistério para mim, não é uma incógnita a ser descoberta... Pela mais verossimilidade do contrário, é uma certeza. Amo-te como amei à primeira vez e continuarei a amar-te como nunca amei antes. Como já dizeis o bom Vinícius: Amo-te como um bicho, simplesmente / De um amor sem mistério e sem virtude / Com um desejo maciço e permanente. 
+E assim foi, ao passas dos breves dias, fazendo morada. Você tornou-se minha casa, meu baluarte, minha pasárgada. Pondo-me a Clariciar e explicar tal situação com: Amor é quando a gente mora um no outro.
+	Mas sim, admito, esse tal amor é, por vezes, um sacana... Nos faz sentir coisas que não amor? Não sei explicar, nem mesmo mensurar, mas sei dizer que, de fato, entre brigas e intrigas... sempre há de chegar no nosso entendimento, na nossa paz... no “Eu amo você’’, parafraseando a Rosa: O amor? É um bem-querer sem limites, desmedido, e com alegria. A gente quer sentir e nem sabe o que quer. É não querer dormir enquanto se está acordado, e querer dormir quando se está pensando na pessoa amada.   
+E aqui estamos nós, seguindo, caminhando, resistindo ao irresistível tic-tac... E, se posso dizer algo a você, farei como uma certa pessoa, em outrora, expressou singelamente: Meu coração está sempre ao seu dispor.
+
+</div>
+
+<div class="galeria">
+    <img src="fotos/foto1.JPEG">
+    <img src="fotos/foto2.JPEG">
+    <img src="fotos/foto3.JPEG">
+    <img src="fotos/foto4.JPEG">
+    <img src="fotos/foto5.JPEG">
+    <img src="fotos/foto6.JPEG">
+    <img src="fotos/foto7.JPEG">
+    <img src="fotos/foto8.JPEG">
+    <img src="fotos/foto9.JPEG">
+    <img src="fotos/foto10.JPEG">
+    <img src="fotos/foto11.JPEG">
+</div>
+
+<div class="caixa-final">
+    <h2>Aceita renovar esse contrato por mais 3 anos?</h2>
+    <button id="sim">Sim ❤️</button>
+    <button id="nao">Não 😢</button>
+    <div class="mensagem-final" id="mensagem">
+        Hehe, eu já sabia ^^ ❤️
+    </div>
+</div>
+
+<script>
+
+/* CORAÇÕES CAINDO */
+function criarCoracao() {
+    const heart = document.createElement("div");
+    heart.classList.add("heart");
+    heart.innerHTML = "❤️";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.animationDuration = (Math.random() * 3 + 2) + "s";
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+        heart.remove();
+    }, 5000);
+}
+
+setInterval(criarCoracao, 300);
+
+
+/* BOTÃO NÃO FUGINDO INFINITO */
+const botaoNao = document.getElementById("nao");
+
+botaoNao.addEventListener("mouseover", () => {
+    const largura = window.innerWidth - 100;
+    const altura = window.innerHeight - 50;
+
+    botaoNao.style.left = Math.random() * largura + "px";
+    botaoNao.style.top = Math.random() * altura + "px";
+});
+
+
+/* BOTÃO SIM + CONFETE */
+document.getElementById("sim").addEventListener("click", () => {
+    document.getElementById("mensagem").style.display = "block";
+
+    for(let i = 0; i < 100; i++) {
+        const confete = document.createElement("div");
+        confete.classList.add("confete");
+        confete.style.left = Math.random() * 100 + "vw";
+        confete.style.background = `hsl(${Math.random() * 360}, 100%, 50%)`;
+        document.body.appendChild(confete);
+
+        setTimeout(() => {
+            confete.remove();
+        }, 2000);
+    }
+});
+
+</script>
+
+</body>
+</html>
